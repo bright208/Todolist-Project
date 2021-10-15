@@ -46,6 +46,16 @@ app.post('/todos', (req, res) => {
     .catch(error => console.log(error))
 })
 
+//動態路由
+
+app.get("/todos/:id", (req, res) => {
+  const id = req.params.id
+  Todo.findById(id)
+    .lean()
+    .then((todo) => res.render('detail', { todo }))
+    .catch(error => console.log(error))
+})
+
 // 設定 port 3000
 app.listen(3000, () => {
   console.log('App is running on http://localhost:3000')
