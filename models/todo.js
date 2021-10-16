@@ -6,4 +6,4 @@ const todoSchema = new Schema({
     required: true // 這是個必填欄位
   }
 })
-module.exports = mongoose.model('Todo', todoSchema)
+module.exports = mongoose.model('Todo', todoSchema)//把Schema輸出並命名為Todo
